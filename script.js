@@ -15,7 +15,21 @@ $(document).keyup(function(e) {
         $('#keyboard-lower-container').show();
 }});
 
-$(document).keypress(function (e) {
-    if (e.keyCode >=8) {
-        $('span').css("background-color", "yellow");
-}});
+$(document).bind('keydown', function(e) {
+    $('#' + (e.keyCode)).css('background-color', 'yellow');
+});
+$(document).bind('keyup', function(e) {
+    $('#' + (e.keyCode)).css('background-color', '');
+});
+$(document).bind('keydown', function(e) {
+    $('#' + (e.keyCode + 32)).css('background-color', 'yellow');
+});
+$(document).bind('keyup', function(e) {
+    $('#' + (e.keyCode + 32)).css('background-color', '');
+});
+$(document).bind('keydown', function(e) {
+    $('#32' + (e.keyCode)).css('background-color', 'yellow');
+});
+$(document).bind('keyup', function(e) {
+    $('#32' + (e.keyCode)).css('background-color', 'yellow');
+});
